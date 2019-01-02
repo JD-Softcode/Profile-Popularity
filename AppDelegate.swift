@@ -44,7 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	@IBAction func saveMenuItem(_ sender: NSMenuItem) {
-		myPrioritizer.doSaveFile(theData: profileDisplayData)
+		_ = myPrioritizer.doSaveFile(theData: profileDisplayData)
 	}
 	
 	func application(_ sender: NSApplication, openFile filename: String) -> Bool {

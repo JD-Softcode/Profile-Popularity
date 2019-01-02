@@ -37,8 +37,8 @@ class ProfileProgrammer: NSObject {
 			for line in originalFileLines {
 				if !line.starts(with: variantLineID) {
 					let lineParts:[String] = line.components(separatedBy: ";")
-					let profileName = lineParts[0].trimmingCharacters(in: .whitespaces)
 					if lineParts.count >= 9 {
+						let profileName = "\(lineParts[5].trimmingCharacters(in: .whitespaces).dropLast(8)) (\(lineParts[0].trimmingCharacters(in: .whitespaces)))"
 						let profileRank = lineParts[8].trimmingCharacters(in: .whitespaces)
 						dataStore.addRow(oldRank: profileRank, profileName: profileName)
 					}
